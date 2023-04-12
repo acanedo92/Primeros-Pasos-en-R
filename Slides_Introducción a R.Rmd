@@ -1,0 +1,149 @@
+---
+title: "Mis primeros pasos en R"
+author: "M.C. Anahí Canedo Téxon"
+date: '2023-03-22'
+output:
+  xaringan::moon_reader:
+    css: 
+      - rladies                           # el archivo CSS del tema R-Ladies
+      - rladies-fonts
+      - default
+    #seal: false
+    self_contained: true
+    nature:
+      ratio: '16:9'
+
+---
+
+---
+## Bienvenida
+Hola
+
+---
+R es un lenguaje de programación creado por los estadísticos Ross Ihaka y Robert Gentleman , R se utiliza entre los mineros de datos , bioinformáticos y estadísticos para el análisis de datos y el desarrollo de software estadístico . [7] Los usuarios han creado paquetes para aumentar las funciones del lenguaje R.
+
+
+---
+## Ciencia de Datos
+
+
+---
+## ¿Porqué usamos R?
+knk
+---
+## ¿Cómo funciona R?
+* R es un lenguaje Orientado a Objetos.  
+Las variables, datos, funciones, resultados, se guardan en la memoria activa del computador en forma de objetos con un nombre específico. 
+El usuario puede modificar o manipular estos objetos con operadores (aritméticos, lógicos, y comparativos) y funciones (que a su vez son objetos).  
+
+![](/home/anahi/Escritorio/Primeros-Pasos-en-R/Figuras/Fig_01.png){width='100%'height=100%}
+---
+## R y Rstudio
+nnjj
+- Bullet 1
+- Bullet 2
+- Bullet 3
+---
+## R Base y Paquetes
+**R base** Las funciones disponibles estan guardadas en una librería localizada en el directorio R HOME/library
+(R HOME es el directorio donde R esta instalado). Este directorio contiene paquetes de funciones, las cuales a su vez estan estructuradas en directorios. El paquete denominado ´ base constituye el nucleo de R y contiene las funciones b ´ asicas del lenguaje para leer y manipular datos, algunas funciones graficas y algunas funciones estad ´ ´ısticas (regresion lineal y an ´ alisis de varianza).  
+
+**CRAN**  
+* Los archivos necesarios para instalar R, ya sea desde las fuentes o binarios pre-compilados, se distribuyen desde el sitio de internet Comprehensive R Archive Network (CRAN) junto con las instrucciones de instalacion
+* 20.000 paquetes en CRAN 
+
+
+**Biocondutor**
+Se enfoca al desarrollo y distribución de paquetes de R destinados al anáiisis de datos genómicos, incluyendo herramientas para manipular datos de microarreglos, NGS, single cell genomics, etc. 
+
+
+---
+## Creación, listado y remoción de objetos en memoria
+* ***Asignar objetos***: Para crear nuevos objetos se denotado con el símbolo “->” o “<-”, incluso con "=".
+
+```{r}
+a<-20
+20 -> a
+a=20
+
+```
+
+---
+## R cómo calculadora 
+
+---
+
+* Almacenar variables en un objeto:
+```{r}
+f1 <- "manzana"
+f2 <- "pera"
+```
+
+*
+
+---
+
+## Vectores, Listas, Dataframe, Arreglos, matrices
+R opera en estructuras de datos
+
+ - Vectores
+ - Matrices
+ - Listas
+ - Data frames
+ - Funciones 
+ 
+---
+class: chapter-slide
+## Matrices
+* Una matriz es una estructura rectangular, que contiene datos de un solo tipo.
+* Son usadas principalmente en operaciones matemáticas y estadística.
+* Para crear una matriz usaremos la función **matrix()**.
+* Si usamos esta función sin proporcionar el número de renglones o columnas que
+deseamos crear, por defecto hará el acomodo de los datos en una sola columna.
+
+```{r include=T}
+matrix(1:15)
+```
+---
+
+Si especificamos el número de renglones que deseamos en la matriz, el arreglo
+será diferente.
+
+```{r}
+matrix(1:15, nrow = 3)
+```
+
+Notemos que los datos comienzan a llenar las columnas de arriba a abajo y de 
+izquierda a derecha.
+---
+
+Si le indicamos un número de columnas y renglones menor al número de datos, 
+se usarán los que cubran los espacios en la matriz y el resto se descartará
+
+```{r}
+matrix(1:15, nrow = 3, ncol = 3)
+```
+
+---
+Por otro lado, si le indicamos un número de columnas y renglones que sobrepasa
+el número de datos disponibles, los datos se reciclan.
+
+```{r}
+matrix(1:15, nrow = 4, ncol = 4)
+```
+
+---
+
+
+
+---
+## Cargar bases de datos/leer archivos
+
+
+---
+## Referencias:
+R para Principiantes  
+Emmanuel Paradis  
+https://cran.r-project.org/doc/contrib/rdebuts_es.pdf 
+
+---
