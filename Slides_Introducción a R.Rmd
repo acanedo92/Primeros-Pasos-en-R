@@ -151,7 +151,7 @@ ls()
 ---
 ## Tipos de objetos en R (vectores)
 Si los objetos creados contienen un conjunto de datos del mismo tipo, esto es un vector.    
-Los tipos de objetos o vectores en R son:  
+Los tipos de objetos o vectores sobre los que opera **R** son:  
 
 - numeric: números reales o decimales
 - integer: números enteros
@@ -168,7 +168,6 @@ Los objetos pueden tener otros objetos que los conforman, y adquirir una clase d
 - data.frame: base de datos
 ---
 ## Vectores, Listas, Dataframe, Arreglos, matrices
-R opera en estructuras de datos
 
  - Vectores
  - Matrices
