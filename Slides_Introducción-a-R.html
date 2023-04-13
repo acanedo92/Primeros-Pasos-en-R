@@ -275,7 +275,7 @@ f2 &lt;- &quot;pera&quot;
 ```
 
 ```r
-10^2 #exponensiales
+10^2 #exponenciales
 ```
 
 ```
@@ -323,6 +323,8 @@ ls()
 # Esto en un comentario
 ```
 
+---
+
 # Consultar el manual de ayuda en R
 
 ```r
@@ -332,23 +334,25 @@ ls()
 ```
 
 ---
-Los tipos de objetos en R se conocen en la comunidad como clases. Existen muchas clases de objetos, pero las clases más sencillas son 5:
+## Tipos de objetos en R (vectores)
+Si los objetos creados contienen un conjunto de datos del mismo tipo, esto es un vector.    
+Los tipos de objetos o vectores sobre los que opera **R** son:  
 
-numeric: números reales o decimales
-integer: números enteros
-complex: números complejos
-character: carácteres
-logical: resultados lógicos (TRUE o FALSE)
-Como lo vimos en el Capítulo 4, los objetos pueden combinarse para crear otros nuevos. Es más, hay objetos que tienen otros objetos que los conforman y cada uno puede ser de diferente clase. Así también tendremos otras clases para objetos compuestos, por ejemplo,
+- numeric: números reales o decimales
+- integer: números enteros
+- complex: números complejos
+- character: carácteres
+- logical: resultados lógicos (TRUE o FALSE)
 
-list: listas
-matrix: matriz
-array: colección de objetos
-data.frame: base de datos
+Los objetos pueden combinarse para crear otros nuevos.  
+Los objetos pueden tener otros objetos que los conforman, y adquirir una clase diferente:  
+      
+- list: listas
+- matrix: matriz
+- array: colección de objetos
+- data.frame: base de datos
 ---
-
 ## Vectores, Listas, Dataframe, Arreglos, matrices
-R opera en estructuras de datos
 
  - Vectores
  - Matrices
@@ -532,7 +536,121 @@ dim(grupoA) #dim() nos permite conocer las dimensiones de un objeto
 ```
 
 ---
+
+## Funciones para explorar objetos en R
+
+Vamos a usar como ejemplo una base de datos pre-cargada en R base.
+
+
+```r
+data() #Explorar las opciones de las bases de datos precargadas en R base
+data(PlantGrowth) #Seleccionar la base de datos &quot;PlantGrowth&quot;: Results from an Experiment on Plant Growth
+str(PlantGrowth) #obtener el tipo de objeto/vector de PlantGrowth
+```
+
+```
+## &#39;data.frame&#39;:	30 obs. of  2 variables:
+##  $ weight: num  4.17 5.58 5.18 6.11 4.5 4.61 5.17 4.53 5.33 5.14 ...
+##  $ group : Factor w/ 3 levels &quot;ctrl&quot;,&quot;trt1&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+```
+
+```r
+dim(PlantGrowth) #obtener las dimensiones del objetos PlantGrowth
+```
+
+```
+## [1] 30  2
+```
+
+```r
+names(PlantGrowth) #debido a qué es un data frame (compuesto de columnas y renglones), queremos conocer el nombre de las etiquetas de cada columna
+```
+
+```
+## [1] &quot;weight&quot; &quot;group&quot;
+```
+
+```r
+ncol(PlantGrowth) #obtener el numero de columnas del data frame
+```
+
+```
+## [1] 2
+```
+
+```r
+nrow(PlantGrowth) #obtener el numero de renglones del data frame
+```
+
+```
+## [1] 30
+```
+
+--- 
 ## Cargar bases de datos/leer archivos
+
+**Archivos csv**
+
+
+---
+
+
+## Practica
+* Este e un Data Paper https://db.cger.nies.go.jp/JaLTER/metacat/metacat/ERDP-2020-01.1/jalter-en 
+En Sapporo,Japón en 1979 y 1989, se llevó a cabo un monitoreo sistemático de abejas, en el Jardín Botánico de la Universidad de Hokkaido, el estudio incluía el muestreo de abejas y el registro de las flores visitadas por las abejas de abril a septiembre. 
+
+* Pregunta: Cuántos ejemplares de abejas se resgristraron
+
+* ¿Qué géneros de abejas se encuntraron en este estudio?
+
+
+```r
+polinizadores &lt;- read.csv(&quot;DataBases/PolinizadoresJapon.csv&quot;, header = T, sep = &quot;,&quot;) 
+#la opcion &quot;sep&quot; nos permite cambiar el delimitador que tengas nuestro archivo de origen: tabulador &quot;\t&quot; , punto y coma (;), espacios (&quot;\s&quot;). 
+names(polinizadores)
+```
+
+```
+## [1] &quot;Specimen_id&quot; &quot;site&quot;        &quot;Year&quot;        &quot;Family&quot;      &quot;Bee&quot;        
+## [6] &quot;Sex&quot;         &quot;Date&quot;        &quot;Period&quot;      &quot;Flower&quot;
+```
+
+```r
+familia &lt;- polinizadores$Family #seleccionar la columna Family y guardarlo en un objeto
+str(familia)
+```
+
+```
+##  chr [1:12900] &quot;Andrenidae&quot; &quot;Andrenidae&quot; &quot;Andrenidae&quot; &quot;Andrenidae&quot; ...
+```
+
+```r
+length(familia)
+```
+
+```
+## [1] 12900
+```
+
+```r
+head(familia)
+```
+
+```
+## [1] &quot;Andrenidae&quot; &quot;Andrenidae&quot; &quot;Andrenidae&quot; &quot;Andrenidae&quot; &quot;Andrenidae&quot;
+## [6] &quot;Andrenidae&quot;
+```
+
+```r
+familia &lt;- as.factor(familia)
+Family &lt;- levels(familia)
+length(levels(familia))
+```
+
+```
+## [1] 6
+```
+
 
 
 ---
