@@ -111,6 +111,7 @@ f2 <- "pera"
 10^2 #exponenciales
 
 ```
+---
 * Operaciones con objetos
 ```{r}
 a=10
@@ -122,18 +123,19 @@ c=2
 ```
 
 ---
-# Enlistar los objetos en el entorno
+**Enlistar los objetos en el entorno**
 ```{r}
+ls()
+objects()
+```
+
+**Borrar objetos**
+```{r}
+#rm(a)
 ls()
 ```
 
-# Borrar objetos
-```{r}
-rm(a)
-ls()
-```
-
-# Los comentarios en R:
+**Los comentarios en R**
 ```{r}
 # Esto en un comentario
 
@@ -152,31 +154,66 @@ ls()
 ## Tipos de objetos en R (vectores)
 Si los objetos creados contienen un conjunto de datos del mismo tipo, esto es un vector.    
 Los tipos de objetos o vectores sobre los que opera **R** son:  
-
+**Objetivos simples**
 - numeric: números reales o decimales
 - integer: números enteros
 - complex: números complejos
 - character: carácteres
+- factor: registrar datos cualitativos.
 - logical: resultados lógicos (TRUE o FALSE)
 
 Los objetos pueden combinarse para crear otros nuevos.  
 Los objetos pueden tener otros objetos que los conforman, y adquirir una clase diferente:  
-      
-- list: listas
-- matrix: matriz
-- array: colección de objetos
-- data.frame: base de datos
----
-## Vectores, Listas, Dataframe, Arreglos, matrices
-
- - Vectores
- - Matrices
+**Objetivos compuestos**      
  - Listas
  - Data frames
+ - Matrices
  - Arreglos
+---
+Para conocer la clase de cada objeto podemos emplear la función class() , por ejemplo
+```{r}
+class(a)
+class(f1)
+```
+---
+## Objetivos simples
+**Numéricos**
+```{r}
+precios <- c(20,50,100)
+class(precios)
+```
+**Caracteres**
+```{r}
+nombres <- c("Jose", "Pepe", "Mariana", "Daniel", "Oscar", "Paola")
+class(nombres)
+```
+**Factor**
+```{r}
+sexo <- factor(c("Femenino", "Masculino"))
+class(sexo)
+levels(sexo)
+
+sexo <- c("Femenino", "Masculino")
+class(sexo)
+levels(sexo)
+
+```
 
 ---
-## Vectores
+**Lógicos**
+```{r}
+ x <- 1
+ y <- 2   
+ respuesta <- (x > y)      # ¿x es mayor que y?; guardar el reultado en el objeto r
+ respuesta            # imprimir el resultado
+
+class(respuesta)       # clase del objeto respuesta
+
+```
+
+---
+##Objetivos compuestos
+**Listas**
 
 ---
 class: chapter-slide
@@ -247,6 +284,23 @@ dim(grupoA) #dim() nos permite conocer las dimensiones de un objeto
 ```
 
 ---
+**Extraer información de una tabla**
+
+```{r}
+print(grupoA)
+grupoA[6,] #obtener la fila de la posición 6, correspondiente a la información de Paola
+grupoA[,3] #obtener la columna de alturas de de todos los estudiantes
+grupoA[6] #obtener el nombre del estudiante Paola
+```
+---
+
+```{r}
+print(grupoA)
+grupoA[6,3] #obtener la estatura de Paola 
+```
+
+# Obten la edad de Mariana
+---
 
 ## Funciones para explorar objetos en R
 
@@ -261,19 +315,30 @@ str(PlantGrowth) #obtener el tipo de objeto/vector de PlantGrowth
 dim(PlantGrowth) #obtener las dimensiones del objetos PlantGrowth
 names(PlantGrowth) #debido a qué es un data frame (compuesto de columnas y renglones), queremos conocer el nombre de las etiquetas de cada columna
 #----------
+```
+---
+# Acceder a los elementos, o columnas del data frame
 
-# Acceder a los elementos, o columntas del data frame
+```{r}
 # PlantGrowth$
 PlantGrowth$weight
 PlantGrowth$group
 ?attach() # Permite acceder a los objetos en la base de datos simplemente dando sus nombres.
 attach(PlantGrowth) 
+```
+---
+
+```{r}
 weight
 group
-#--------
+```
+
+```{r}
 ncol(PlantGrowth) #obtener el numero de columnas del data frame
 nrow(PlantGrowth) #obtener el numero de renglones del data frame
+```
 
+```{r}
 #explorar las categorias o los diferentes niveles de los grupos de tratamientos en el experimento
 levels(group)
 
@@ -290,7 +355,12 @@ trt1  <- subset(PlantGrowth, group =="trt1")
 c2 <- nrow(trt1)
 trt2  <- subset(PlantGrowth, group =="trt2")
 c3 <-nrow(trt2)
+```
 
+
+---
+
+```{r}
 #Guardar el conteo de plantas por cada tratamiento en una tabla:
 results <- as.table(cbind(c1,c2,c3))
 #Renombrarlas columnas y renglones:
@@ -298,13 +368,94 @@ colnames(results) <- c("control", "nitrogeno", "fosforo")
 names(results)
 row.names(results) <- "No.Plantas"
 print(results)
-
 ```
 
---- 
+---
+## Generación de gráficos
+ctrl <- subset(PlantGrowth, group =="ctrl")
+c1 <- nrow(ctrl)
+trt1  <- subset(PlantGrowth, group =="trt1")
+c2 <- nrow(trt1)
+trt2  <- subset(PlantGrowth, group =="trt2")
+c3 <-nrow(trt2)
+
+```{r}
+#Gráfico de barras, del peso de las plantas
+barplot(PlantGrowth$weight)
+```
+
+---
+#Gráfico de barras, del peso de las plantas por cada tratamiento
+
+```{r}
+peso.mean <- as.table(cbind(mean(ctrl$weight),mean(trt1$weight),mean(trt2$weight)))
+
+colnames(peso.mean) <- c("control", "nitrogeno", "fosforo")
+peso.mean
+
+barplot(peso.mean, main = "Promedio de Crecimiento", ylab = "Peso(gr.)", xlab = "Tratamientos")
+```
+
+
+---
+
 ## Cargar bases de datos/leer archivos
 
-**Archivos csv**
+```{r}
+getwd() #conocer la ubicación de tu directorio de trabajo actual, copiar y pegar, para modificar a continuación la carpeta de trabajo.
+#setwd("/home/usuario/Escritorio/Primeros-Pasos-en-R/DataBases/") #establecer la ruta al directorio en que se encuntrar los archivos que deseas leer
+
+```
+<span style="color: #00868B;">**Manos a la obra: Obtén tu directorio de trabajo actual y cambialo al diretorio DataBases **</span> 
+---
+
+**Archivos .txt**  
+Los archivos con extensión .txt pueden ser leídos empleando la función read.table().  
+Aunque no son tan comunes para leer en R.
+
+~~~
+read.table(file, header = FALSE, sep = "", quote = "\"'",
+           dec = ".", numerals = c("allow.loss", "warn.loss", "no.loss"),
+           row.names, col.names, as.is = !stringsAsFactors,
+           na.strings = "NA", colClasses = NA, nrows = -1,
+           skip = 0, check.names = TRUE, fill = !blank.lines.skip,
+           strip.white = FALSE, blank.lines.skip = TRUE,
+           comment.char = "#",
+           allowEscapes = FALSE, flush = FALSE,
+           stringsAsFactors = FALSE,
+~~~
+
+
+```{r}
+arboles <- read.table("DataBases/Arboles.txt", sep = " ", header = T)
+head(arboles)
+```
+
+---
+
+**Archivos .csv**  
+Los archivos con extensión .csv pueden ser leídos empleando la función read.csv().  
+~~~
+read.csv(file, header = TRUE, sep = ",", quote = "\"",
+         dec = ".", fill = TRUE, comment.char = "", ...)
+~~~
+
+```{r}
+head(read.csv("DataBases/Poblaciones.csv"))
+```
+```{r}
+head(read.csv("DataBases/Poblaciones.csv", sep = "\t", header = T))
+```
+
+---
+
+**Archivos excel**
+~~~
+Existe un paquete especial para leer archivos de excel:
+library(readxl)
+
+Sin embargo es recomendable convertir tus archivos .xlsx a .csv
+~~~
 
 
 ---
@@ -346,9 +497,6 @@ ind_1979.no <- length(levels(as.factor(ind_1979$Specimen_id)))
 ```
 
 
-
----
-## Funciones
 
 
 ---
