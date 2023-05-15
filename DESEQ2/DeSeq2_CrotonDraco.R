@@ -20,7 +20,7 @@ library("tximport")
 search()
 #############################################################################
 getwd()
-setwd("/home/usuario/Escritorio/DESEQ2/")
+setwd("/home/usuario/Escritorio/Primeros-Pasos-en-R/DESEQ2/")
 
 dir <- getwd()
 

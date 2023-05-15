@@ -24,6 +24,7 @@ SUB2 <- SUB[,2:7]
 SUB3<- scale(SUB2)
 heatmap(SUB3, main = "DEG en Transcriptoma C.D.", col = coul, margins = c(5,5), xlab= "Organos", ylab= "Unigenes")
 
+### heatmap(as.matrix(data[1:10000,2:7]))  ### NO CORRER EN PC PERSONAL
 #------------
 # Guardar
 png("Heatmap.png")
