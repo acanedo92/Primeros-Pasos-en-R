@@ -8,10 +8,22 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("DESeq2")
 
+# EN TERMINAL(desde BASH):
+# sudo apt-get installl ibxml2-dev
+# sudo apt-get installl libcurl4-openssl-dev
+# 3. sudo apt-get -y install libcurl4-gnutls-dev libxml2-dev libssl-dev 
+
+# Desde R:
+# if (!requireNamespace("BiocManager", quietly = TRUE))
+#   install.packages("BiocManager")
+# BiocManager::install("DESeq2")
+
+##############################################################
 install.packages("pheatmap")
 install.packages("ggplot2")
 install.packages(" RColorBrewer")
 install.packages(" tximport")
+##############################################################
 # CARGAR PAQUETERIAS
 library("DESeq2")
 library("pheatmap")
