@@ -1,5 +1,6 @@
-## Funciones para explorar objetos en R
-
+###############################################################################
+## FFUNCIONES PARA EXPLORAR DATAFRAME
+###############################################################################
 # Vamos a usar como ejemplo una base de datos pre-cargada en R base.
 
 
@@ -47,6 +48,7 @@ length(levels(group)) #¿cuántos tratamientos se realizaron en el experimento?
 
 #############################################################################
 # CREANDO UN SUBSET
+###############################################################################
   # ¿Cuántas plantas se utilizaron por cada tratamieto? 
   # Hacer un subset de cada uno de los grupos  de tratamientos en el experimento
 ?subset()
@@ -71,7 +73,7 @@ print(results)
 ---
 #############################################################################
 # GENERACIÓN DE GRÁFICOS
-
+###############################################################################
 
 barplot(PlantGrowth$weight) # Gráfico de barras, del peso de las plantas
 hist(PlantGrowth$weight) #Histogramas
