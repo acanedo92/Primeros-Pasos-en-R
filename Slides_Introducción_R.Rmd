@@ -14,16 +14,20 @@ output:
       
 
 ---
+# TODOS LO ODIAN O LO AMAN
+---
+
 ## Historia
 * R es un lenguaje de programación creado por los estadísticos Ross Ihaka y Robert Gentleman en 1996. ![](Figuras/Fig_03.png)
 
 ---
-* R, ES software libre, se inscribe dentro del proyecto GNU General Public Licence (Licencia Pública General, GNU). 
-* licencia GNU:  libertad del uso, modificación y distribución del software.
+## ¿Porqué usamos R?
 
-* CRAN (Comprehensive R Archive Network) es la plataforma creada para almacenar en la nube, el código fuente de R, archivos ejecutables, documentación, y los paquetes creados por usuarios para aumentar las funciones del lenguaje R.
+* R, es software libre,gratuito
 
-* Actualmente hay ~20,000 paquetes depositados en el CRAN, otros en BioConductor y GitHub.
+* La sintaxis de R es muy simple e intuitiva
+
+* **CÓDIGO ABIERTO** Licencia GNU:Libertad del uso, modificación y distribución del software.
 
 * R se utiliza para el análisis de datos cuantitativos y cualitavitos en diferentes disciplinas.
 
@@ -31,31 +35,28 @@ output:
 
 ---
 ## R Base y Paquetes
-**R base** Las funciones disponibles estan guardadas en una librería localizada en el directorio R HOME/library
-(R HOME es el directorio donde R esta instalado). Este directorio contiene paquetes de funciones, las cuales a su vez estan estructuradas en directorios. El paquete denominado base constituye el nucleo de R y contiene las funciones básicas del lenguaje para leer y manipular datos, algunas funciones gráficas y algunas funciones estadísticas (regresión lineal y análisis de varianza).  
+**R base**  
+* Las funciones disponibles viven en el R HOME es el directorio donde R esta instalado. * Este directorio contiene paquetes de funciones.  
+* **R Base** contiene las funciones básicas del lenguaje para leer y manipular datos, algunas funciones gráficas y algunas funciones estadísticas (regresión lineal y análisis de varianza).  
 
 **CRAN**  
-* Los archivos necesarios para instalar R, ya sea desde las fuentes o binarios pre-compilados, se distribuyen desde el sitio de internet **Comprehensive R Archive Network (CRAN)** junto con las instrucciones de instalacion
-* 20.000 paquetes en CRAN 
+**Comprehensive R Archive Network (CRAN)**
+* Los archivos necesarios para instalar R, código fuente, las instrucciones de instalación, etc
+* Actualmente hay ~20,000 paquetes depositados en el CRAN, otros en BioConductor y GitHub.
 
 
 **Biocondutor**
 Se enfoca al desarrollo y distribución de paquetes de R destinados al anáiisis de datos genómicos, incluyendo herramientas para manipular datos de microarreglos, NGS, single cell genomics, etc. 
 
 ---
-## ¿Porqué usamos R?
-* Código abierto y libre
-* la sintaxis de R es muy simple e intuitiva
----
+
 ## ¿Cómo funciona R?  
 
 * R es un lenguaje Orientado a Objetos.  
-* R guarda los resultados como un “objeto”, de tal manera que se puede hacer un analisis sin ne- ´
-cesidad de mostrar su resultado inmediatamente
-* Las variables, datos, funciones, resultados, se guardan en la memoria activa del computador en forma de objetos con un nombre específico. 
-* El usuario puede modificar o manipular estos objetos con operadores (aritméticos, lógicos, y comparativos) y funciones (que a su vez son objetos).  
-* Todas las acciones en R se realizan con objetos que son guardados en la memoria activa del
-ordenador, sin usar archivos temporales
+* R guarda los resultados como un “objeto”, de tal manera que se puede hacer un analisis sin necesidad de mostrar su resultado inmediatamente
+* Las variables, datos, funciones, resultados, se guardan en la memoria activa del computador en forma de objetos. 
+* El usuario puede modificar o manipular estos objetos con operadores y funciones.
+* Todas las acciones en R se realizan con objetos que son guardados en la memoria activa del ordenador, sin usar archivos temporales.
 
 ![](Figuras/Fig_01.png){width='80%'height=80%} 
 
@@ -116,8 +117,6 @@ c=2
 (a+b)^c
 
 ```
----
-
 
 ---
 **Enlistar los objetos en el entorno**

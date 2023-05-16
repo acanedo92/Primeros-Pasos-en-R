@@ -2,7 +2,7 @@
 # CREACIÓN Y MANIPULACIÓN DE OBJETOS
 ###############################################################################
 
-# Asigar objetos: 
+# Asignar objetos: 
 a<-20
 20 -> a
 a=20
