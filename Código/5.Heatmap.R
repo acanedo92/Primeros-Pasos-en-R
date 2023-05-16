@@ -1,5 +1,7 @@
 ################################################################################
 # SET DE DATOS PRUEBA, PAQUETERÍA heatmap()
+################################################################################
+
 #data()
 data <- mtcars
 heatmap(data)
@@ -13,6 +15,8 @@ heatmap(scale(as.matrix(data)), main = "Heatmap", col = coul, margins = c(5,5))
 
 ################################################################################
 # Matriz de Abundancias Calculadas con datos de RNA-Seq del transcriptoma de una especie arbórea
+################################################################################
+
 # Cargar y explorar los datos
 data <- read.csv("AbundanceMatrix.TMM.fpkm.matrix", sep = "\t", header = T)
 colnames(data) <- c("Unigenes" , "Hoja", "Fruto" ,"Tallo" ,"Raíz"  ,"Inf_1" ,"Inf_2")
