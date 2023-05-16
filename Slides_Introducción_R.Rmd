@@ -1,7 +1,7 @@
 ---
 title: "Mis primeros pasos en R"
 author: "M.C. Anahí Canedo Téxon"
-date: '2023-03-22'
+date: '2023-05-16'
 output:
   xaringan::moon_reader:
     css: 
@@ -14,7 +14,8 @@ output:
       
 
 ---
-# TODOS LO ODIAN O LO AMAN
+# TODOS LO ODIAN O TODOS LO AMAN
+![](Figuras/RLOVE.png)
 ---
 
 ## Historia
@@ -193,7 +194,7 @@ dim(grupoA) #dim() nos permite conocer las dimensiones de un objeto
 ```
 
 ---
-**Extraer información de una tabla**
+## Extraer información de una tabla
 #### SINTAXIS: objeto[reglon, columna]
 ```{r}
 print(grupoA)
@@ -239,17 +240,20 @@ class(f1)
 ```
 ---
 ## Objetos simples
-**Numéricos**
+---
+## Numéricos
 ```{r}
 precios <- c(20,50,100)
 class(precios)
 ```
-**Caracteres**
+
+## Caracteres
 ```{r}
 nombres <- c("Jose", "Pepe", "Mariana", "Daniel", "Oscar", "Paola")
 class(nombres)
 ```
-**Factor**
+
+## Factor
 ```{r}
 sexo <- factor(c("Femenino", "Masculino"))
 class(sexo)
@@ -262,7 +266,7 @@ levels(sexo)
 ```
 
 ---
-**Lógicos**
+## Lógicos
 ```{r}
  x <- 1
  y <- 2   
@@ -275,7 +279,8 @@ class(respuesta)       # clase del objeto respuesta
 
 ---
 ## Objetos compuestos
-**Listas**
+---
+## LISTAS
 * Una lista es una colección ordenada de objetos
 * Los componentes pueden ser de diferente tamaño y clase.
 * Las listas pueden contener vectores, matrices, cadenas de caracteres, data
@@ -287,10 +292,11 @@ sitio = c("Bosque Mesófilo", "Bosque Tropical","Selva") )
 Colecta
 class(Colecta)
 ```
-
 ---
-
-## Matrices
+## Extraer información de una lista
+#### SINTAXIS: lista$
+---
+## MATRICES
 * Una matriz es una estructura rectangular, que contiene datos de un solo tipo.
 * Son usadas principalmente en operaciones matemáticas y estadística.
 * Para crear una matriz usaremos la función **matrix()**.
@@ -328,11 +334,19 @@ el número de datos disponibles, los datos se reciclan.
 matrix(1:15, nrow = 4, ncol = 4)
 ```
 ---
-## Array
+# TO/DO: 
+* Crea una matriz con  50 números.  
+* Identifica las diferencias obtenidas en cada uno de los siguientes casos:  
+ a) Con 5 columnas y 10 renglones.  
+ b) Con 10 columnas y 10 renglones  
+ c) Con sólo 2 columnas   
+---
+
+## ARRAY
 * Un array es una extensión de un vector a más de dos dimensiones.  
 * Los arrays se emplean para representar datos multidimensinales de un único tipo.  
 * Los arrays son raramente utilizados en el análisis de datos, por este motivo no profundizaremos en su estudio en este texto.
-## SINTAXIS: array(datos, dimensiones)
+### SINTAXIS: array(datos, dimensiones)
 
 ```{r}
 miarray <- array(data=letters[1:24], dim=c(3, 4, 2))
@@ -354,7 +368,7 @@ miarray[,, 2]
 # TO/DO: Extrae la letra "k"
 
 ---
-## Data Frame
+## DATA FRAME
 * Es una lista de vectores de la misma longitud en una estructura
 rectangular, que R representa de forma similar a una tabla.
 * Estructuras de datos de dos dimensiones (rectangulares) que pueden contener datos de diferentes tipos (cualitativos/cuantitativos).
