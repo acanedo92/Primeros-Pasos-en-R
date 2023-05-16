@@ -69,7 +69,7 @@ estudiantes <- c("Jose", "Pepe", "Mariana", "Daniel", "Oscar", "Paola")
 print(estudiantes)
 
 #Crear un objeto que almacene la edad de cada estudiante
-edades <- c("10", "10", "9", "8", "9", "11")
+edades <- c(10, 10, 9, 8, 9, 11)
 print(edades)
 
 #Crear un objeto con la estatura de los estudiantes
