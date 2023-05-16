@@ -29,18 +29,28 @@ output:
 
 * **CÓDIGO ABIERTO** Licencia GNU:Libertad del uso, modificación y distribución del software.
 
-* R se utiliza para el análisis de datos cuantitativos y cualitavitos en diferentes disciplinas.
+* R se utiliza para el análisis de datos cuantitativos y cualitativos en diferentes disciplinas.
 
 * Permite además desarrollo de software especializado, por ello, la gran diversidad de paquetes.
 
 ---
+## ------------------ COMUNIDAD DE R------------------ ##
+## R-Community: https://r-community.org/usergroups/
+## CDBS: https://comunidadbioinfo.github.io/es/ 
+
+![](Figuras/RGlobal.png)
+
+---
+## RLadiesGlobal: https://www.rladies.org/
+## RLadiesMéxico: https://rladiesmx.netlify.app/
+![](Figuras/RLadies.png)
+
+---
 ## R Base y Paquetes
 **R base**  
-* Las funciones disponibles viven en el R HOME es el directorio donde R esta instalado. * Este directorio contiene paquetes de funciones.  
-* **R Base** contiene las funciones básicas del lenguaje para leer y manipular datos, algunas funciones gráficas y algunas funciones estadísticas (regresión lineal y análisis de varianza).  
+* Las funciones disponibles viven en el R HOME es el directorio donde R esta instalado. * **R Base** contiene las funciones básicas del lenguaje para leer y manipular datos, algunas funciones gráficas y algunas funciones estadísticas (regresión lineal y análisis de varianza).  
 
-**CRAN**  
-**Comprehensive R Archive Network (CRAN)**
+**CRAN**: **Comprehensive R Archive Network (CRAN)**
 * Los archivos necesarios para instalar R, código fuente, las instrucciones de instalación, etc
 * Actualmente hay ~20,000 paquetes depositados en el CRAN, otros en BioConductor y GitHub.
 
@@ -68,7 +78,7 @@ Se enfoca al desarrollo y distribución de paquetes de R destinados al anáiisis
 - Descargar [RStudio](https://posit.co/download/rstudio-desktop/).   
 
 RStudio Desktop es una aplicación de desarrollo de RStudio Inc. Esta app funciona como un entorno de desarrollo integrado (IDE), proporcionando a los usuarios herramientas optimizadas para el lenguaje de programación R. Permite construir scripts, compilar códigos, crear gráficos e incluso trabajar con varios conjuntos de datos en un entorno altamente capacitado.
-
+## Generación de Proyectos para Desarrollo de Software
 La versión de escritorio de RStudio permite optimizar el espacio de trabajo almacenando y organizando los datos en proyectos. Además, ofrece una consola y un editor completos que son limpios y fáciles de navegar 
 
 ---
@@ -184,7 +194,7 @@ dim(grupoA) #dim() nos permite conocer las dimensiones de un objeto
 
 ---
 **Extraer información de una tabla**
-
+#### SINTAXIS: objeto[reglon, columna]
 ```{r}
 print(grupoA)
 grupoA[6,] #obtener la fila de la posición 6, correspondiente a la información de Paola
@@ -205,9 +215,8 @@ grupoA[6,3] #obtener la estatura de Paola
 ---
 
 ## Tipos de objetos en R (vectores)
-Si los objetos creados contienen un conjunto de datos del mismo tipo, esto es un vector.    
-Los tipos de objetos o vectores sobre los que opera **R** son:  
-**Objetivos simples**
+Los tipos de objetos sobre los que opera **R** son:  
+**Objetos simples**
 - numeric: números reales o decimales
 - integer: números enteros
 - complex: números complejos
@@ -217,7 +226,7 @@ Los tipos de objetos o vectores sobre los que opera **R** son:
 
 Los objetos pueden combinarse para crear otros nuevos.  
 Los objetos pueden tener otros objetos que los conforman, y adquirir una clase diferente:  
-**Objetivos compuestos**      
+**Objetos compuestos**      
  - Listas
  - Data frames
  - Matrices
@@ -323,7 +332,7 @@ matrix(1:15, nrow = 4, ncol = 4)
 * Un array es una extensión de un vector a más de dos dimensiones.  
 * Los arrays se emplean para representar datos multidimensinales de un único tipo.  
 * Los arrays son raramente utilizados en el análisis de datos, por este motivo no profundizaremos en su estudio en este texto.
-## array(datos, dimensiones)
+## SINTAXIS: array(datos, dimensiones)
 
 ```{r}
 miarray <- array(data=letters[1:24], dim=c(3, 4, 2))
