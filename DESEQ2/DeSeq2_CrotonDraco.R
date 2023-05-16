@@ -1,5 +1,6 @@
 #############################################################################
 # Differential gene expression analysis 
+# Workflow: [Analyzing RNA-seq data with DESeq2](https://www.bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#why-un-normalized-counts) |Mirna Vazquez-Rosas-Landa|Anahí Canedo-Téxon
 ############################################################################
 # INSTALACION DE PAQUETERIAS
 
