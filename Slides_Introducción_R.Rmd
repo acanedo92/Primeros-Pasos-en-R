@@ -44,7 +44,7 @@ output:
 ---
 ## RLadiesGlobal: https://www.rladies.org/
 ## RLadiesMéxico: https://rladiesmx.netlify.app/
-![](Figuras/RLadies.png)
+![](Figuras/RLadiesGlobal.png)
 
 ---
 ## R Base y Paquetes
