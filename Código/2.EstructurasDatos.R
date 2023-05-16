@@ -37,6 +37,7 @@ class(nombres)
 ###############################################################################
 sexo <- factor(c("Femenino", "Masculino"))
 class(sexo)
+str(sexo)
 levels(sexo)
 ---
 # LÓGICOS
@@ -63,6 +64,7 @@ class(respuesta)       # clase del objeto respuesta
 # Función list()
 ###############################################################################
   
+
 Colecta <- list(especie = "Piper nigrum", muestras= 200,
                   sitio = c("Bosque Mesófilo", "Bosque Tropical","Selva") )
 Colecta
@@ -74,9 +76,11 @@ class(Colecta)
 ###############################################################################
 
 matrix(1:15)
-matrix(1:15, nrow = 3)
+matrix(1:15, nrow = 3, byrow = TRUE)
 matrix(1:15, nrow = 3, ncol = 3)
-matrix(1:15, nrow = 4, ncol = 4)
+mi.MATRIX <- matrix(1:15, nrow = 4, ncol = 4)
+
+dim(matrix(1:15, nrow = 4, ncol = 4))
 ################################################################################
 # TO/DO: 
 # Crea una matriz con  50 números.
@@ -92,7 +96,7 @@ matrix(1:15, nrow = 4, ncol = 4)
 # ARREGLOS
 # SINTAXIS: array(datos, dimensiones)
 ###############################################################################
-miarray <- array(data=letters[1:24], dim=c(3, 4, 2))
+miarray <- array(data=LETTERS[1:24], dim=c(3, 4, 2))
 #Si queremos extraer la letra almacenada en la fila 1 y columna 3 de la segunda capa de miarray usamos el siguiente código:
 miarray[1, 3, 2]
 #Si queremos extraer la segunda capa completa usamos el siguiente código.
