@@ -200,10 +200,11 @@ grupoA[6,3] #obtener la estatura de Paola
 ```
 
 # TO/DO: Obten la edad de Mariana
----
 
+---
 # 2. ESTRUCTURAS DE DATOS EN R
 ---
+
 ## Tipos de objetos en R (vectores)
 Si los objetos creados contienen un conjunto de datos del mismo tipo, esto es un vector.    
 Los tipos de objetos o vectores sobre los que opera **R** son:  
@@ -318,6 +319,31 @@ el número de datos disponibles, los datos se reciclan.
 ```{r}
 matrix(1:15, nrow = 4, ncol = 4)
 ```
+---
+## Array
+* Un array es una extensión de un vector a más de dos dimensiones.  
+* Los arrays se emplean para representar datos multidimensinales de un único tipo.  
+* Los arrays son raramente utilizados en el análisis de datos, por este motivo no profundizaremos en su estudio en este texto.
+## array(datos, dimensiones)
+
+```{r}
+miarray <- array(data=letters[1:24], dim=c(3, 4, 2))
+
+#Si queremos extraer la letra almacenada en la fila 1 y columna 3 de la segunda capa de miarray usamos el siguiente código:
+miarray[1, 3, 2]
+
+```
+
+---
+
+```{r}
+
+#Si queremos extraer la segunda capa completa usamos el siguiente código.
+miarray[,, 2]
+
+```
+
+# TO/DO: Extrae la letra "k"
 
 ---
 ## Data Frame
@@ -337,6 +363,7 @@ df <- data.frame(
 df
 
 ```
+
 ---
 # 3. Funciones para explorar data frame
 ---
@@ -377,6 +404,7 @@ nrow(PlantGrowth) #obtener el numero de renglones del data frame
 
 ```
 
+---
 ```{r}
 #explorar las categorias o los diferentes niveles de los grupos de tratamientos en el experimento
 levels(group)
@@ -447,7 +475,7 @@ barplot(peso.mean, beside= T, main = "Promedio de Crecimiento", ylab = "Peso(gr.
 
 ---
 # 4. Cargar bases de datos/leer archivos
---- 
+---
 
 ```{r}
 
@@ -455,16 +483,14 @@ barplot(peso.mean, beside= T, main = "Promedio de Crecimiento", ylab = "Peso(gr.
 getwd() 
 #Establece tu directorio de trabajo
 #Ejemplo: Estoy en escritorio ("/home/anahi/Escritorio/") y quiero moverme al Repositorio del Curso: 
-setwd("/home/anahi/Escritorio/Primeros-Pasos-en-R/") 
+#setwd("/home/anahi/Escritorio/Primeros-Pasos-en-R/") 
 ```
 
 ---
 getwd() #conocer la ubicación de tu directorio de trabajo actual, copiar y pegar, para modificar a continuación la carpeta de trabajo.
-#setwd("/home/usuario/Escritorio/Primeros-Pasos-en-R/DataBases/") #establecer la ruta al directorio en que se encuentran los archivos que deseas leer
 
-```
-<span style="color: #00868B;">**Manos a la obra: Obtén tu directorio de trabajo actual y cambialo al diretorio DataBases **</span> 
-```
+setwd("/home/usuario/Escritorio/Primeros-Pasos-en-R/DataBases/") #establecer la ruta al directorio en que se encuentran los archivos que deseas leer
+
 
 ---
 
