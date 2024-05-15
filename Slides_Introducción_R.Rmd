@@ -1,7 +1,7 @@
 ---
 title: "Mis primeros pasos en R"
 author: "M.C. Anahí Canedo Téxon"
-date: '2023-05-16'
+date: '2024'
 output:
   xaringan::moon_reader:
     css: 
@@ -563,39 +563,6 @@ En Sapporo,Japón en 1979 y 1989, se llevó a cabo un monitoreo sistemático de 
   3. ¿Cuántas flores diferentes visitaron las abejas de este estudio?
   4. ¿Cuántos individuos se registraron por cada año? Enlistalos en una tabla con la función as.table()
 
----
-Codigo
-```{r}
-polinizadores <- read.csv("DataBases/PolinizadoresJapon.csv", header = T, sep = ",") 
-#la opcion "sep" nos permite cambiar el delimitador que tengas nuestro archivo de origen: tabulador "\t" , punto y coma (;), espacios ("\s"). 
-names(polinizadores)
-familia <- polinizadores$Family #seleccionar la columna Family y guardarlo en un objeto
-str(familia)
-length(familia)
-head(familia)
-familia <- as.factor(familia)
-```
-
----
-```{r}
-Family <- levels(familia)
-length(levels(familia))
-
-length(levels(as.factor(polinizadores$Flower)))
-length(polinizadores$Flower)
-
-?subset()
-(levels(as.factor(polinizadores$Year)))
-
-```
-
----
-```{r}
-ind_1979 <- subset(polinizadores, Year==1979) 
-head(ind_1979)
-ind_1979.no <- length(levels(as.factor(ind_1979$Specimen_id)))
-ind_1979.no
-```
 
 ---
 ## Referencias:
